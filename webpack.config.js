@@ -1,5 +1,5 @@
-// TODO: Add Webpack Clean Plugin - Getting Error TypeError: compiler.plugin is not a function
 const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const prod = process.env.NODE_ENV === 'production'
 
@@ -26,4 +26,5 @@ module.exports = {
         ],
     },
     devtool: prod ? undefined : 'source-map',
+    plugins: [new CleanWebpackPlugin()],
 }
